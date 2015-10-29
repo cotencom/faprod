@@ -3,8 +3,8 @@ pageContent = {};
 $(document).ready(function() {
 	for(i=0 ; i<pages.length ; i++) {
 		if(pages[i] == "/") pages[i] = "index.html";
-		uri = "/ajax/" + pages[i] + ".json";
-		eval("jQuery.get(\""+uri+"\", function(data) { pageContent[\""+uri+"\"] = data; console.log(\""+uri+"\"); }.bind(\""+uri+"\"));");
+		uri = urlPrefix + "/ajax/" + pages[i] + ".json";
+		eval("jQuery.get(\""+uri+"\", function(data) { pageContent[\""+uri+"\"] = data;  }.bind(\""+uri+"\"));");
 	}
 	/*
 	page("*", function(context, controller) {
